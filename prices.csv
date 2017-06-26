@@ -1,0 +1,134 @@
+Commodity;Average;Produced by;Consumed by
+Explosives;261;High Tech (Surface),Refinery;Extraction
+Hydrogen Fuel;110;.*;.*
+Mineral Oil;181;Agricultural;Refinery
+Hydrogen Peroxide;917;;Refinery,Industrial
+Liquid Oxygen;263;Refinery;Industrial
+Nerve Agents;13526;Refinery (Surface);High Tech (Surface),Military
+Pesticides;241;High Tech;Agricultural
+Surface Stabilisers;467;Refinery (Surface);.* (Surface),!Refinery
+Synthetic Reagents;6675;Refinery (Surface);High Tech,Military
+Water;120;Agricultural,Extraction (Surface);.*,!Agriculutral,!Extraction (Surface)
+Clothing;285;Industrial;.*
+Consumer Technology;6769;High Tech;.*,!High Tech
+Domestic Appliances;487;Industrial;.*
+Evacuation Shelter;343;High Tech;.* (Surface),High  Tech
+Survival Equipment;485;Industrial;.* (Surface),!Industrial
+Algae;137;Agricultural;Industrial,Military
+Animal Meat;1292;Agricultural;.*,!Agricultural
+Coffee;1279;Agricultural;.*,!Agricultural
+Fish;406;Agricultural;.*,!Agricultural
+Food Cartridges;105;Industrial;.*,!Agricultural,!Industrial
+Fruit And Vegetables;312;Agricultural;.*
+Grain;210;Agricultural;.*,!Agricultural
+Synthetic Meat;271;High Tech;.*,!High Tech,!Agricultural
+Tea;1467;Agricultural;.*,!Agricultural
+CMM Composite;3132;Refinery (Surface);High Tech,Industrial,Military
+Ceramic Composites;232;Refinery (Surface);Industrial,High Tech
+Micro-Weave Cooling Hoses;403;;Industrial,Military
+Insulating Membrane;7837;Refinery (Space);High Tech,Industrial,Military
+Meta-.*oys;88148;;
+Neofabric Insulation;2769;;High Tech,Military
+Polymers;171;Refinery;Military,Terraforming,Industrial
+Semiconductors;967;Refinery;Terraforming,Industrial
+Superconductors;6609;Refinery;Terraforming,High Tech,Industrial
+Beer;186;Agricultural;.*
+Liquor;587;Agricultural,Industrial;.*
+Narcotics;9966;Agricultural,High Tech,Industrial;.*,!High Tech,!Industrial
+Tobacco;5035;Agricultural;.*
+Wine;260;Agricultural;.*
+Articulation Motors;4997;;High Tech
+Atmospheric Processors;357;Industrial;Terraforming,Agricultural
+Building Fabricators;980;Industrial;Colony (Surface),Extraction (Surface),High Tech (Surface),Military (Surface),Tourist (Surface)
+Crop Harvesters;2021;Industrial;Agricultural
+Emergency Power Cells;1011;Rare;High Tech,Industrial,Military
+Energy Grid Assembly;3149;;High Tech,Military
+Exhaust Manifold;479;Rare;High Tech
+Geological Equipment;1661;Industrial;Colony (Surface),Extraction (Surface),Military (Surface),High Tech (Surface)
+HN Shock Mount;406;Industrial;High Tech,Military
+Heatsink Interlink;729;;High Tech
+Magnetic Emitter Coil;199;;
+Marine Equipment;3916;Industrial;Agricultural
+Microbial Furnaces;236;High Tech;Refinery
+Mineral Extractors;443;Industrial;Extraction
+Modular Terminals;695;;
+Power Converter;246;;High Tech
+Power Generators;458;Industrial;.*,!Industrial
+Skimmer Components;859;Industrial;.* (Surface),!Industrial (Surface)
+Thermal Cooling Units;256;Industrial;Colony (Surface),Extraction (Surface),High Tech (Surface),Military (Surface),Tourist (Surface)
+Water Purifiers;258;Industrial;.*,!Industrial
+Advanced Medicines;1259;High Tech;.*,!High Tech
+Agri-Medicines;1038;High Tech;Agricultural
+Basic Medicines;279;High Tech,Industrial;.*,!High Tech,!Industrial
+Combat Stabilisers;3505;High Tech;.*,!High Tech
+Performance Enhancers;6816;High Tech;Colony,Agricultural,Industrial,Refinery,Extraction,Military
+Progenitor Cells;6779;High Tech;.*,!High Tech,!Terraforming
+Aluminium;340;Refinery;Industrial,Military
+Beryllium;8288;Refinery;High Tech,Industrial
+Bismuth;2284;Refinery (Surface);High Tech
+Cobalt;647;Extraction,Refinery;High Tech,Industrial
+Copper;481;Refinery;Industrial
+G.*ium;5135;Refinery;High Tech,Industrial
+Gold;9401;Extraction,Refinery.*,!Agricultural,!Refinery,!Extraction,!Military;
+Indium;5727;Refinery;High Tech,Industrial
+Lanthanum;8766;Refinery (Surface);High Tech
+Lithium;1596;Refinery;High Tech,Industrial
+Osmium;7591;;High Tech,Industrial,Military,Terraforming
+P.*adium;13298;Extraction;.*,!Agricultural,!Refinery,!Extraction,!Military
+Platinum;19279;;.*,!Agricultural,!Refinery,!Extraction,!Military
+Praseodymium;7156;;High Tech,Industrial
+Samarium;6330;;High Tech,Industrial
+Silver;4775;Extraction,Refinery;.*,!Agricultural,!Refinery,!Extraction,!Military
+Tantalum;3962;Refinery;High Tech,Industrial
+Th.*ium;3618;Refinery (Surface);High Tech
+Thorium;11513;Refinery (Surface);High Tech
+Titanium;1006;Refinery;High Tech,Industrial
+Uranium;2705;Refinery;High Tech,Industrial
+Bauxite;120;Extraction;Refinery
+Bertrandite;2374;Extraction;Refinery
+Bromellite;7062;;High Tech
+Coltan;1319;Extraction;Refinery
+Cryolite;2266;Extraction (Surface);High Tech,Refinery
+G.*ite;1819;Extraction;High Tech,Refinery
+Goslarite;916;Extraction (Surface);Refinery
+Indite;2088;Extraction;Refinery
+Lepidolite;544;Extraction;Refinery
+Lithium Hydroxide;5646;;High,Tech Refinery
+Jadeite;13284;;Service (Space),Tourist
+Low Temperature Diamonds;57445;;.*
+Methane Clathrate;629;;Refinery
+Methanol Monohydrate;2282;;Colony,High Tech,Industrial
+Moissanite;8090;;Service(Space),Tourist
+Painite;40508;;.*,!Terraforming
+Pyrophyllite;1565;Extraction (Surface);High Tech,Refinery
+Rutile;299;Extraction;High Tech,Refinery
+Taaffeite;20561;;Service (Orbital),Tourist
+Uraninite;836;Extraction;Refinery
+Imperial Slaves;15984;Agricultural;.*
+Advanced Catalysers;2947;High Tech;Refinery
+Animal Monitors;324;High Tech;Agricultural
+Aquaponic Systems;314;High Tech;Terraforming,Agricultural
+Auto-Fabricators;3734;High Tech;Industrial
+Bioreducing Lichen;998;High Tech;Extraction
+Computer Components;513;Industrial;High Tech,Military
+H.E. Suits;340;High Tech;Industrial,Refinery,Extraction,Military
+Hardware Diagnostic Sensor;4437;;High Tech,Military
+Land Enrichment Systems;5169;High Tech;Terraforming,Agricultural
+Medical Diagnostic Equipment;2848;High Tech;Service
+Micro Controllers;3274;High Tech;Industrial,Military
+Nanobreakers;639;;High Tech,Military
+Resonating Separators;5958;High Tech;Refinery
+Robotics;1856;High Tech;Industrial
+Structural Regulators;1791;High Tech (Surface);.* (Surface),!High Tech
+Telemetry Suite;2080;;High Tech,Military
+Conductive Fabrics;507;Refinery;High Tech,Industrial
+Leather;205;Agricultural;Industrial
+Military Grade Fabrics;708;Industrial;Military
+Natural Fabrics;439;Agricultural;Industiral
+Synthetic Fabrics;211;Refinery;Industrial
+Biowaste;63;.*,!Agricultural;Agricultural
+Scrap;48;Colony,High Tech,Military,Industrial;Refinery
+Landmines;4602;Military (Surface);Colony (Surface),Extraction (Surface),High Tech (Surface),Refinery (Surface)
+Non-Lethal Weapons;1837;High Tech,Military;.*
+Personal Weapons;4632;High Tech,Industrial,Military;.*
+Reactive Armour;2113;High Tech,Military;.*
