@@ -1,6 +1,4 @@
 import sys, reader, argparse, json, pretty_print
-from functools import reduce
-from math import ceil
 
 parser = argparse.ArgumentParser(description='Proccess a commodities csv-file')
 parser.add_argument('file', metavar='F', type=str,
