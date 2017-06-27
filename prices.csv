@@ -12,7 +12,7 @@ Water;120;Agricultural,Extraction (Surface);.*,!Agriculutral,!Extraction (Surfac
 Clothing;285;Industrial;.*
 Consumer Technology;6769;High Tech;.*,!High Tech
 Domestic Appliances;487;Industrial;.*
-Evacuation Shelter;343;High Tech;.* (Surface),High  Tech
+Evacuation Shelter;343;High Tech;.* (Surface),High Tech
 Survival Equipment;485;Industrial;.* (Surface),!Industrial
 Algae;137;Agricultural;Industrial,Military
 Animal Meat;1292;Agricultural;.*,!Agricultural
