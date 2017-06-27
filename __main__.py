@@ -1,4 +1,4 @@
-import sys, reader, argparse, json
+import sys, reader, argparse, json, pretty_print
 from functools import reduce
 from math import ceil
 
@@ -44,19 +44,18 @@ with open(args.file, 'r', encoding='utf8') as f:
         print('No commodity matches your criteria')
         sys.exit(0)
 
-    headline_object = {}
-    for key, _ in commodities[0].items():
-        headline_object[key]  = key
-    commodities.insert(0, headline_object)
-    max_tabs = ceil(max(map(lambda x: len(x.name), commodities)) / 8)
-
-    for co in commodities:
-        c_tabs = ceil(((8 * max_tabs) - len(co.name)) / 8)
-        s_tabs = ceil((16 - len(str(co.sell_avg))) / 8)
-        b_tabs = ceil((16 - len(str(co.buy_avg))) / 8)
-        print(
-            co.commodity + ('\t' * c_tabs)
-            + str(co.sell) + '\t' + str(co.sell_avg) + ('\t' * s_tabs)
-            + str(co.buy) + '\t' + str(co.buy_avg) + ('\t' * b_tabs)
-            + str(co.demand) + '\t' + str(co.supply)
-        )
+    print_matrix = [['Commodity', 'Sell', 'Sell Difference', 'Buy',
+                    'Buy Difference', 'Demand', 'Supply']]
+    print_matrix.extend(list(map(
+        map co: [
+            co.name,
+            co.sell,
+            co.sell_avg,
+            co.buy,
+            co.buy_avg,
+            co.demand,
+            co.supply
+        ],
+        commodities
+    )));
+    pretty_print.write(print_matrix)
