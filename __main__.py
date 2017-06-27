@@ -19,13 +19,13 @@ with open(args.file, 'r', encoding='utf8') as f:
             lambda co: co.sell_avg is not None and co.sell_avg >= args.sell_diff,
             commodities
         )
-        commodities = sorted(list(commodities), key=lambda x: x['sell_average'], reverse=True)
+        commodities = sorted(list(commodities), key=lambda co: co.sell_avg, reverse=True)
     elif args.buy_diff is not None:
         commodities = filter(
             lambda co: co.buy_avg is not None and co.buy_avg >= args.buy_diff,
             commodities
         )
-        commodities = sorted(list(commodities), key=lambda x: x.buy_avg, reverse=True)
+        commodities = sorted(list(commodities), key=lambda co: co.buy_avg, reverse=True)
 
     if args.supply is not None:
         commodities = filter(
@@ -45,7 +45,7 @@ with open(args.file, 'r', encoding='utf8') as f:
     print_matrix = [['Commodity', 'Sell', 'Sell Difference', 'Buy',
                     'Buy Difference', 'Demand', 'Supply']]
     print_matrix.extend(list(map(
-        map co: [
+        lambda co: [
             co.name,
             co.sell,
             co.sell_avg,

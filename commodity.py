@@ -12,16 +12,6 @@ with open(os.path.join(__file_dir, 'types.csv'), 'r', encoding='utf8') as f:
         TYPES.append(line[0] + ' (Surface)')
         TYPES.append(line[0] + ' (Space)')
 
-with open(os.path.join(__file_dir, 'prices.csv'), 'r', encoding='utf8') as f:
-    reader = csv.reader(f, dialect=csv.excel, delimiter=';')
-    next(reader)  # skip headline
-    for line in reader:
-        AVERAGES[line[0]] = {
-            'price': int(line[1]),
-            'produced_by': reduce_types(line[2]),
-            'consumed_by': reduce_types(line[3])
-        }
-
 def reduce_types(type_string):
     reduced = set()
     types = type_string.split(',')
@@ -39,6 +29,16 @@ def reduce_types(type_string):
             reduced |= set(filter(lambda x: re.search(pattern, x), TYPES))
 
     return reduced
+
+with open(os.path.join(__file_dir, 'prices.csv'), 'r', encoding='utf8') as f:
+    reader = csv.reader(f, dialect=csv.excel, delimiter=';')
+    next(reader)  # skip headline
+    for line in reader:
+        AVERAGES[line[0]] = {
+            'price': int(line[1]),
+            'produced_by': reduce_types(line[2]),
+            'consumed_by': reduce_types(line[3])
+        }
 
 class Commodity:
 
