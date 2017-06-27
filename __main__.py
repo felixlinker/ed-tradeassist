@@ -15,51 +15,60 @@ parser.add_argument('--economies', '-e', action='store_true', dest='economies',
 args = parser.parse_args()
 with open(args.file, 'r', encoding='utf8') as f:
     org_commodities = reader.read_commodities(f)
-    commodities = list(org_commodities)
+    commodities_lists = []
 
     if args.sell_diff is not None:
-        commodities = filter(
+        sell_commodities = filter(
             lambda co: co.sell_avg is not None and co.sell_avg >= args.sell_diff,
-            commodities
+            list(org_commodities)
         )
-        commodities = sorted(list(commodities), key=lambda co: co.sell_avg, reverse=True)
-    elif args.buy_diff is not None:
-        commodities = filter(
+        sell_commodities = sorted(
+            sell_commodities,
+            key=lambda co: co.sell_avg,
+            reverse=True
+        )
+        commodities_lists.append(sell_commodities)
+
+    if args.buy_diff is not None:
+        buy_commodities = filter(
             lambda co: co.buy_avg is not None and co.buy_avg >= args.buy_diff,
-            commodities
+            list(org_commodities)
         )
-        commodities = sorted(list(commodities), key=lambda co: co.buy_avg, reverse=True)
+        buy_commodities = sorted(
+            buy_commodities,
+            key=lambda co: co.buy_avg,
+            reverse=True
+        )
+        commodities_lists.append(buy_commodities)
+
+    if len(commodities_lists) == 0:
+        commodities_lists = [list(org_commodities)]
 
     if args.supply is not None:
-        commodities = filter(
-            lambda co: co.demand is None or co.demand >= args.supply,
-            commodities
-        )
-        commodities = filter(
-            lambda co: co.supply is None or co.supply >= args.supply,
-            commodities
-        )
+        commodities_lists = [
+            filter(
+                lambda co: (co.demand is None or co.demand >= args.supply) and (co.supply is None or co.supply >= args.supply),
+                commodities
+            ) for commodities in commodities_lists
+        ]
 
-    commodities = list(commodities)
-    if len(commodities) == 0:
-        print('No commodity matches your criteria')
-        sys.exit(0)
-
-    print_matrix = [['Commodity', 'Sell', 'Sell Difference', 'Buy',
-                    'Buy Difference', 'Demand', 'Supply']]
-    print_matrix.extend(list(map(
-        lambda co: [
-            co.name,
-            co.sell,
-            co.sell_avg,
-            co.buy,
-            co.buy_avg,
-            co.demand,
-            co.supply
-        ],
-        commodities
-    )));
-    pretty_print.write(print_matrix)
+    for commodities in commodities_lists:
+        print_matrix = [['Commodity', 'Sell', 'Sell Difference', 'Buy',
+                        'Buy Difference', 'Demand', 'Supply']]
+        print_matrix.extend(list(map(
+            lambda co: [
+                co.name,
+                co.sell,
+                co.sell_avg,
+                co.buy,
+                co.buy_avg,
+                co.demand,
+                co.supply
+            ],
+            commodities
+        )));
+        pretty_print.write(print_matrix)
+        print()
 
     if args.economies:
         producer_mapping = dict()
@@ -75,7 +84,6 @@ with open(args.file, 'r', encoding='utf8') as f:
                     consumer_mapping.setdefault(consumer, list())\
                         .append((co.name, co.buy_avg))
 
-        print()
         producer_matrix = []
         for k, v in producer_mapping.items():
             v = sorted(v, key=lambda co: co[1], reverse=True)
