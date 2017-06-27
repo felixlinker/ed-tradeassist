@@ -14,6 +14,8 @@ with open(os.path.join(__file_dir, 'types.csv'), 'r', encoding='utf8') as f:
 
 def reduce_types(type_string):
     reduced = set()
+    if type_string == '':
+        return reduced
     types = type_string.split(',')
     for t in types:
         t = t.strip()
