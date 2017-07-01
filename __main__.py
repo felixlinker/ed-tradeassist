@@ -1,11 +1,12 @@
 import sys, reader, argparse, json, pretty_print, re
+from math import inf
 
 parser = argparse.ArgumentParser(description='Proccess a commodities csv-file')
 parser.add_argument('file', metavar='F', type=str,
                     help='The commodity csv file')
-parser.add_argument('--buy-diff', '-bd', type=int, dest='buy_diff',
+parser.add_argument('--buy-diff', '-bd', nargs='?', type=int, dest='buy_diff', const=-inf,
                     help='Filters for a buy price minimum difference towards galactic average')
-parser.add_argument('--sell-diff', '-sd', type=int, dest='sell_diff',
+parser.add_argument('--sell-diff', '-sd', nargs='?', type=int, dest='sell_diff', const=-inf,
                     help='Filters for a sell price minimum difference towards galactic avery')
 parser.add_argument('--supply', '-s', type=int, dest='supply',
                     help='Filters for a minimum demand/supply value')
@@ -21,7 +22,7 @@ with open(args.file, 'r', encoding='utf8') as f:
 
     if args.sell_diff is not None:
         sell_commodities = filter(
-            lambda co: co.sell_avg is not None and co.sell_avg >= args.sell_diff,
+            lambda co: co.sell_avg is not None and co.sell_avg >= args.sell_diff and len(co.produced_by) > 0,
             list(org_commodities)
         )
         sell_commodities = filter(
