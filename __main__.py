@@ -1,4 +1,4 @@
-import sys, reader, argparse, json, pretty_print
+import sys, reader, argparse, json, pretty_print, re
 
 parser = argparse.ArgumentParser(description='Proccess a commodities csv-file')
 parser.add_argument('file', metavar='F', type=str,
@@ -11,6 +11,8 @@ parser.add_argument('--supply', '-s', type=int, dest='supply',
                     help='Filters for a minimum demand/supply value')
 parser.add_argument('--economies', '-e', action='store_true', dest='economies',
                     help='If present, the economies involved when trading to given station will be displayed.')
+parser.add_argument('--to', '-t', type=str, dest='consumer', default='.*')
+parser.add_argument('--from', '-f', type=str, dest='producer', default='.*')
 
 args = parser.parse_args()
 with open(args.file, 'r', encoding='utf8') as f:
@@ -21,6 +23,10 @@ with open(args.file, 'r', encoding='utf8') as f:
         sell_commodities = filter(
             lambda co: co.sell_avg is not None and co.sell_avg >= args.sell_diff,
             list(org_commodities)
+        )
+        sell_commodities = filter(
+            lambda co: True in map(lambda prod: bool(re.match(args.producer, prod)), co.produced_by),
+            sell_commodities
         )
         sell_commodities = sorted(
             sell_commodities,
@@ -33,6 +39,10 @@ with open(args.file, 'r', encoding='utf8') as f:
         buy_commodities = filter(
             lambda co: co.buy_avg is not None and co.buy_avg >= args.buy_diff,
             list(org_commodities)
+        )
+        buy_commodities = filter(
+            lambda co: True in map(lambda cons: bool(re.match(args.consumer, cons)), co.consumed_by),
+            buy_commodities
         )
         buy_commodities = sorted(
             buy_commodities,
