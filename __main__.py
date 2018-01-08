@@ -1,4 +1,4 @@
-import sys, reader, argparse, json, pretty_print, re
+import reader, argparse, pretty_print, re
 from math import inf
 
 parser = argparse.ArgumentParser(description='Proccess a commodities csv-file')
