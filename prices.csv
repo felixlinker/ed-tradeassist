@@ -3,7 +3,7 @@ Explosives;261;High Tech (Surface),Refinery;Extraction
 Hydrogen Fuel;110;.*;.*
 Mineral Oil;181;Agricultural;Refinery
 Hydrogen Peroxide;917;;Refinery,Industrial
-Liquid Oxygen;263;Refinery;Industrial
+Liquid oxygen;263;Refinery;Industrial
 Nerve Agents;13526;Refinery (Surface);High Tech (Surface),Military
 Pesticides;241;High Tech;Agricultural
 Surface Stabilisers;467;Refinery (Surface);.* (Surface),!Refinery
@@ -19,7 +19,7 @@ Animal Meat;1292;Agricultural;.*,!Agricultural
 Coffee;1279;Agricultural;.*,!Agricultural
 Fish;406;Agricultural;.*,!Agricultural
 Food Cartridges;105;Industrial;.*,!Agricultural,!Industrial
-Fruit And Vegetables;312;Agricultural;.*
+Fruit and Vegetables;312;Agricultural;.*
 Grain;210;Agricultural;.*,!Agricultural
 Synthetic Meat;271;High Tech;.*,!High Tech,!Agricultural
 Tea;1467;Agricultural;.*,!Agricultural
@@ -70,7 +70,7 @@ Bismuth;2284;Refinery (Surface);High Tech
 Cobalt;647;Extraction,Refinery;High Tech,Industrial
 Copper;481;Refinery;Industrial
 Gallium;5135;Refinery;High Tech,Industrial
-Gold;9401;Extraction,Refinery;.*,!Agricultural,!Refinery,!Extraction,!Military;
+Gold;9401;Extraction,Refinery;.*,!Agricultural,!Refinery,!Extraction,!Military
 Indium;5727;Refinery;High Tech,Industrial
 Lanthanum;8766;Refinery (Surface);High Tech
 Lithium;1596;Refinery;High Tech,Industrial
@@ -120,6 +120,7 @@ Hardware Diagnostic Sensor;4437;;High Tech,Military
 Land Enrichment Systems;4887;High Tech;Terraforming,Agricultural
 Medical Diagnostic Equipment;2848;High Tech;Service
 Micro Controllers;3274;High Tech;Industrial,Military
+Muon Imager;6353;Industrial (Surface),High Tech (Surface);Extraction (Surface),Military (Surface)
 Nanobreakers;639;;High Tech,Military
 Resonating Separators;5958;High Tech;Refinery
 Robotics;1856;High Tech;Industrial
